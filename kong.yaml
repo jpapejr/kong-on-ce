@@ -2,23 +2,22 @@
  _transform: true
 
  services:
- - host: mockbin.org
-   name: example_service
-   port: 80
-   protocol: http
+ - host: backend-1.z0l65872iqe.private.us-east.codeengine.appdomain.cloud 
+   name: backend-1 
+   port: 443
+   protocol: https
    routes:
-   - name: example_route
+   - name: backend-1_route
      paths:
-     - /mock
+     - /be1
      strip_path: true
- - host: www.google.com
-   name: another_service
-   port: 80
-   protocol: http
+ - host: backend-2.z0l65872iqe.private.us-east.codeengine.appdomain.cloud
+   name: backend-2
+   port: 443 
+   protocol: https
    routes:
-   - name: another_service_route
+   - name: backend-2_route
      paths:
-     - /ggl
-     - /google
+     - /be2
      strip_path: true
 
