@@ -1,23 +1,35 @@
- _format_version: "3.0"
- _transform: true
+_format_version: "3.0"
+_transform: true
 
- services:
- - host: backend-1.z0l65872iqe.private.us-east.codeengine.appdomain.cloud 
-   name: backend-1 
-   port: 443
-   protocol: https
-   routes:
-   - name: backend-1_route
-     paths:
-     - /be1
-     strip_path: true
- - host: backend-2.z0l65872iqe.private.us-east.codeengine.appdomain.cloud
-   name: backend-2
-   port: 443 
-   protocol: https
-   routes:
-   - name: backend-2_route
-     paths:
-     - /be2
-     strip_path: true
+services:
+- host: backend-1.z0l65872iqe.private.us-east.codeengine.appdomain.cloud 
+  name: backend-1 
+  port: 443
+  protocol: https
+  routes:
+  - name: backend-1_route
+    paths:
+    - /be1
+    strip_path: true
+- host: backend-2.z0l65872iqe.private.us-east.codeengine.appdomain.cloud
+  name: backend-2
+  port: 443 
+  protocol: https
+  routes:
+  - name: backend-2_route
+    paths:
+    - /be2
+    strip_path: true
+plugins:
+- name: key-auth
+  config: 
+    key_names:
+    - apikey
+consumers:
+- username: jtp 
+  custom_id: user-123 
+keyauth_credentials:
+- consumer: jtp
+  key: YgRTxsPLG1EEHsAau/KD9JCJRl6UCzCATfgaW64nkBw= 
+
 

@@ -1,6 +1,5 @@
 FROM registry.access.redhat.com/ubi8/ubi:8.1
    
-COPY kong.yaml /kong/declarative/kong.yaml
 COPY kong-enterprise-edition-3.1.1.3.rhel8.amd64.rpm /tmp/kong.rpm
 
 ENV KONG_DATABASE off
@@ -23,6 +22,7 @@ RUN set -ex; \
     && kong version
    
 COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY kong.yaml /kong/declarative/kong.yaml
    
 USER kong
    
