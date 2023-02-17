@@ -11,4 +11,14 @@
      paths:
      - /mock
      strip_path: true
+ - host: www.google.com
+   name: another_service
+   port: 80
+   protocol: http
+   routes:
+   - name: another_service_route
+     paths:
+     - /ggl
+     - /google
+     strip_path: true
 
